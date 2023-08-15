@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Заголовок страницы</title>
+</head>
+<body>
+    <p id="name"></p>
+    <p id="fail"></p>
+    <button onclick="chooseRandom()">Твоя судьба</button>
+<p id="randomResult"></p>
+
+<script>
+var text = ["Лох", "Писюн", "Кирилл", "Лошара", "Сигма", "Бомжик", "Бибизян", "Гей", "Гном", "Рональдо", "Месси", "Жопа", "Писька", "Жопка", "ИДИ СПИ ЛОХ"];
+
+
+
+let youName = prompt("ТВОЕ ИМЯ?");
+
+document.getElementById("name").innerHTML = ` ${youName}  узнай свою судьбу `;
+
+if(youName === '') {
+    alert("Ну ты и лох без имени");
+};
+
+
+
+function chooseRandom() {
+  var randomIndex = Math.floor(Math.random() * text.length);
+  document.getElementById("randomResult").innerText = "Ты по жизни: " + text[randomIndex];
+}
+</script>
+
+</body>
+</html>
